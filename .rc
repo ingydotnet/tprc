@@ -1,0 +1,26 @@
+OPATH=${OPATH:-$PATH}
+
+paths=(
+  ~/tprc/lingy/perl/bin
+  ~/tprc/yamlscript/perl/bin
+  ~/tprc/test-more-yamlscript-pm/bin
+  ~/tprc/yamltest/perl/bin
+  ~/tprc/rosettacode-pm/bin
+  ~/tprc/RosettaCodeData/bin
+  ~/tprc/vroom-pm/bin
+)
+
+libs=(
+  ~/tprc/assign-pm/lib
+  ~/tprc/lingy/perl/lib
+  ~/tprc/yamlscript/perl/lib
+  ~/tprc/test-more-yamlscript-pm/lib
+  ~/tprc/yamltest/perl/lib
+  ~/tprc/rosettacode-pm/lib
+  ~/tprc/immutable-pm/lib
+  ~/tprc/Devel-hdb/lib
+  ~/tprc/vroom-pm/lib
+)
+
+export PATH=$(IFS=:; echo "${paths[*]}:$OPATH")
+export PERL5LIB=$(IFS=:; echo "${libs[*]}")
