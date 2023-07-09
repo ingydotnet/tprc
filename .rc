@@ -1,30 +1,48 @@
 OPATH=${OPATH:-$PATH}
 
 paths=(
+  ~/tprc/vroom-pm/bin
+  ~/tprc/zilla-dist-pm/bin
+
+  ~/tprc/rosettacode-pm/bin
+  ~/tprc/RosettaCodeData/bin
+
   ~/tprc/lingy/perl/bin
   ~/tprc/yamlscript/perl/bin
   ~/tprc/test-more-yamlscript-pm/bin
   ~/tprc/yamltest/perl/bin
-  ~/tprc/rosettacode-pm/bin
-  ~/tprc/RosettaCodeData/bin
-  ~/tprc/vroom-pm/bin
 )
 
 libs=(
+  ~/tprc/vroom-pm/lib
+  ~/tprc/zilla-dist-pm/lib
+
   ~/tprc/assign-pm/lib
+  ~/tprc/rosettacode-pm/lib
+  ~/tprc/Devel-hdb/lib
+
+  ~/tprc/immutable-pm/lib
   ~/tprc/lingy/perl/lib
   ~/tprc/yamlscript/perl/lib
   ~/tprc/test-more-yamlscript-pm/lib
   ~/tprc/yamltest/perl/lib
-  ~/tprc/rosettacode-pm/lib
-  ~/tprc/immutable-pm/lib
-  ~/tprc/Devel-hdb/lib
-  ~/tprc/vroom-pm/lib
 )
 
 export PATH=$(IFS=:; echo "${paths[*]}:$OPATH")
 export PERL5LIB=$(IFS=:; echo "${libs[*]}")
+export PERL5OPT=-MXXX=global
 
-if [[ $HOME == /Users/idotnet ]]; then
-    export LINGY_CLOJURE_JAR=src:/Users/idotnet/.m2/repository/org/clojure/clojure/1.11.1/clojure-1.11.1.jar:/Users/idotnet/.m2/repository/org/clojure/core.specs.alpha/0.2.62/core.specs.alpha-0.2.62.jar:/Users/idotnet/.m2/repository/org/clojure/spec.alpha/0.3.218/spec.alpha-0.3.218.jar
+if [[ $OSTYPE == darwin* && $HOME == /Users/idotnet ]]; then
+  export LINGY_CLOJURE_JAR=src:/Users/idotnet/.m2/repository/org/clojure/clojure/1.11.1/clojure-1.11.1.jar:/Users/idotnet/.m2/repository/org/clojure/core.specs.alpha/0.2.62/core.specs.alpha-0.2.62.jar:/Users/idotnet/.m2/repository/org/clojure/spec.alpha/0.3.218/spec.alpha-0.3.218.jar
 fi
+
+E() (
+  IFS=:
+  echo 'PATH:'
+  printf '%s\n' $PATH | head
+  echo
+  echo PERL5LIB:
+  printf '%s\n' $PERL5LIB
+  echo
+  set | grep ^PERL5OPT
+)

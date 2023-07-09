@@ -1,0 +1,18 @@
+What is the name of a popular song?
+Write a Perl program that prints the name of a popular song.
+Name a popular programming language.
+Is Perl a popular programming language?
+Write an obfuscated Perl program.
+What's the most famous obfuscated Perl program?
+Is Perl dead?
+Is Larry Wall a great programmer?
+Is Perl fast?
+Is Perl faster than a speeding bullet?
+Is machine code faster than lightning?
+Who 20 well known Perl programmers?
+Who 20 well known Raku programmers?
+Is there a programmer named gugod?
+What is ingyware?
+Does Perl have a killer App?
+Does Raku have a killer App?
+Are you written in Perl?
