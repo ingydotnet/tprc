@@ -24,3 +24,7 @@ libs=(
 
 export PATH=$(IFS=:; echo "${paths[*]}:$OPATH")
 export PERL5LIB=$(IFS=:; echo "${libs[*]}")
+
+if [[ $HOME == /Users/idotnet ]]; then
+    export LINGY_CLOJURE_JAR=src:/Users/idotnet/.m2/repository/org/clojure/clojure/1.11.1/clojure-1.11.1.jar:/Users/idotnet/.m2/repository/org/clojure/core.specs.alpha/0.2.62/core.specs.alpha-0.2.62.jar:/Users/idotnet/.m2/repository/org/clojure/spec.alpha/0.3.218/spec.alpha-0.3.218.jar
+fi
